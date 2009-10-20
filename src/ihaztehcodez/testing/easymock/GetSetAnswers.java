@@ -1,7 +1,7 @@
 package ihaztehcodez.testing.easymock;
 
 import org.easymock.IAnswer;
-import static org.easymock.EasyMock.getCurrentArguments;;
+import static org.easymock.EasyMock.getCurrentArguments;
 
 /** This provides a quick and easy method to stub getters/setters in easymock.
  * This class represents a field hidden behind a getter/setter combo. 
@@ -15,7 +15,6 @@ public class GetSetAnswers<T> {
 	private T value;
 	
 	/** This should be applied to the set method. */
-	
     public IAnswer<Object> set() {
     	
     	return new IAnswer<Object>() {

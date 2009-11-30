@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.junit.runners.BlockJUnit4ClassRunner;
+import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 
 /** Runs JUnit tests in a random order.
@@ -19,9 +20,8 @@ public class RandomBlockJUnit4ClassRunner extends BlockJUnit4ClassRunner {
 
 	/** This randomises the order of the tests and then returns them.
 	 * {@inheritDoc} */
-	@SuppressWarnings("unchecked")
-	protected List computeTestMethods() {
-		List methods = super.computeTestMethods();
+	protected List<FrameworkMethod> computeTestMethods() {
+		List<FrameworkMethod> methods = super.computeTestMethods();
 		Collections.shuffle(methods);
 		return methods;
 	}
